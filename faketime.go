@@ -9,6 +9,8 @@ import (
 	"log"
 )
 
+var fakeTime time.Time
+
 // Now returns the current time, but if the environment variable
 // LD_PRELOAD contains libfaketime then it returns the time
 // specified by that library (using date command).
@@ -18,6 +20,10 @@ func Now() (t time.Time) {
 	var cmd      *exec.Cmd
 	var stdout  []byte
 	var timestamp int64
+	
+	if !fakeTime.IsZero() {
+		return fakeTime
+	}
 	
 	if strings.Index(os.Getenv("LD_PRELOAD"), "libfaketime") == -1 {
 		return time.Now()
@@ -34,4 +40,14 @@ func Now() (t time.Time) {
 	
 	t = time.Unix(timestamp, 0)
 	return
+}
+
+// SetTime changes the date.
+func SetTime(t time.Time) {
+	fakeTime = t
+}
+
+// ClrTime .
+func ClrTime() {
+	fakeTime = time.Time {}
 }

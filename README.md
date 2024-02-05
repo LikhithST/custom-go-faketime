@@ -22,6 +22,14 @@ $ faketime '2040-01-01' ./build/date-go ftime.Time
 2040-01-01 00:00:00
 ```
 
+## Go documentation
+
+    package ftime // import "github.com/harkaitz/go-faketime"
+    
+    func ClrTime()
+    func Now() (t time.Time)
+    func SetTime(t time.Time)
+
 ## Collaborating
 
 For making bug reports, feature requests and donations visit

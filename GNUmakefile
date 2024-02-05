@@ -14,18 +14,18 @@ deps: deps-go
 build/date-go$(EXE): deps
 	go build -o $@ $(GO_CONF) ./cmd/date-go
 
-all-go:  build/date-go$(EXE)
+all-go: build/date-go$(EXE)
 deps-go:
-	mkdir -p build
+	@mkdir -p build
 install-go:
-	install -d $(DESTDIR)$(PREFIX)/bin
-	cp  build/date-go$(EXE) $(DESTDIR)$(PREFIX)/bin
+	@install -d $(DESTDIR)$(PREFIX)/bin
+	cp build/date-go$(EXE) $(DESTDIR)$(PREFIX)/bin
 clean-go:
-	rm -f  build/date-go$(EXE)
+	rm -f build/date-go$(EXE)
 ## -- BLOCK:go --
 ## -- BLOCK:license --
 install: install-license
 install-license: 
-	mkdir -p $(DESTDIR)$(PREFIX)/share/doc/$(PROJECT)
+	@mkdir -p $(DESTDIR)$(PREFIX)/share/doc/$(PROJECT)
 	cp LICENSE  $(DESTDIR)$(PREFIX)/share/doc/$(PROJECT)
 ## -- BLOCK:license --
