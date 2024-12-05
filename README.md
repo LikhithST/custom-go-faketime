@@ -1,14 +1,14 @@
 A TIME.NOW() THAT RESPECTS FAKETIME(1)
 ======================================
 
-On UNIX like operating systems there's a usefull utility (faketime(1))
-that allows executing a program by faking it's clock time.
+On UNIX like operating systems there's a useful utility (faketime(1))
+that allows executing a program by faking its clock time.
 
 This is done by replacing a C library function with LD_PRELOAD. Of
 course go doesn't use the c library so the program fails.
 
-This library implements a copy of "time.Time()" with the name 
-"ftime.Time()". It works exactly the same way "time.Time()" does
+This library implements a copy of "time.Now()" with the name 
+"ftime.Now()". It works exactly same way "time.Now()" does
 but uses the command "date" to get the date and time when the
 LD_PRELOAD environment variable is set.
 
