@@ -30,6 +30,14 @@ $ faketime '2040-01-01' ./build/date-go ftime.Time
     func Now() (t time.Time)
     func SetTime(t time.Time)
 
+## Including this as a custom package into go mod
+
+```sh
+# for go-faketime
+replace github.com/harkaitz/go-faketime => /mnt/c/Users/tolik/Documents/Research_Project/go-faketime
+```
+
+
 ## custom implementation usage
 
 ```
@@ -39,6 +47,7 @@ export LONG_DISTANCE_CONNECTION_DELAY=0.10
 
 export PROCESS_DELAY=0.001
 ```
+
 
 ## Collaborating
 
