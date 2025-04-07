@@ -30,6 +30,16 @@ $ faketime '2040-01-01' ./build/date-go ftime.Time
     func Now() (t time.Time)
     func SetTime(t time.Time)
 
+## custom implementation usage
+
+```
+export FICTITIOUS_DELAY=0.250
+
+export LONG_DISTANCE_CONNECTION_DELAY=0.10
+
+export PROCESS_DELAY=0.001
+```
+
 ## Collaborating
 
 For making bug reports, feature requests and donations visit
